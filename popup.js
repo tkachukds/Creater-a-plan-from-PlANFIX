@@ -1,7 +1,6 @@
-chrome.runtime.sendMessage('start');
-btn.addEventListener("click", btnClick);
-let classes = "b-task-title-wrapper";
-let word = document.getElementsByClassName(classes).innerText;
-function btnClick() {
-     alert(word);
-}
+// получаем доступ к кнопке
+let pars = document.getElementById("btnparse");
+snow.addEventListener("click", async () => {
+
+});
+

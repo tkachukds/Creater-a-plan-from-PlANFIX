@@ -1,12 +1,33 @@
 {
     "name": "Planfix Grabber",
-    "description": "parser planfix  - by Tkachuk D.S.",
+    "description": "parser planfix - by Tkachuk D.S.",
+    "author": "Ткачук Денис",
     "version": "0.1",
     "manifest_version": 3,
-    "permissions": ["activeTab", "scripting"],
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "scripting",
+      "storage",
+      "alarms",
+      "notifications"
+  ],
 
     "action": {
       "default_popup": "popup.html"
-    }
+    },
+
+    "background": {
+      "service_worker": "background.js"
+  },
+    "content_scripts": [
+      {
+          "matches": [ "<all_urls>" ],
+          "js": [ "popup.js" ]
+      }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+]
   }
   
