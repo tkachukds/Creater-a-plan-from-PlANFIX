@@ -1,0 +1,12 @@
+{
+    "name": "Planfix Grabber",
+    "description": "parser planfix  - by Tkachuk D.S.",
+    "version": "0.1",
+    "manifest_version": 3,
+    "permissions": ["activeTab", "scripting"],
+
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
+  
