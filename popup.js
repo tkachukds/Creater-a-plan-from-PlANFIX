@@ -1,22 +1,33 @@
-// получаем кнопку
-let pars = document.getElementById("btnparse");
+// подключаем  скрипты для ДОМ откытой страницы
+chrome.tabs.executeScript(null, {file: 'fromDom.js'});
+
+ //вызываем функцию из fromDom.js для изменения элемента  ДОМе открытой страницы
+ function executeFunctiononDOM(txt){
+     //вызываем функцию из fromDom.js для изменения элемента  ДОМе открытой страницы
+     chrome.tabs.executeScript(null,  {code:txt});
+ }
+ 
+/////////////////////////////////////////////////////
+
 snow.addEventListener("click", async () => {
-onExtensionClick();
-alert('hi');
+     // executeFunctiononDOM("loadID();");
+     executeFunctiononDOM("writeinID('txtstandart', 'hellooo')");
 });
 
 
-function convert(n){
-	var parts = n.split("/");
-	var gramm =  ( ( (parts.length == 1) ? parseInt(parts[0]) : parseInt(parts[0]) / parseInt(parts[1]) ) * 28.3495231 ).toFixed(2);
-	return  isNaN(gramm) ? "--" : gramm;
-}
 
-document.addEventListener('DOMContentLoaded', function() {	
+
+
+
+
+
+
+function selectedText() {	
 	chrome.tabs.executeScript( null, {"code": "window.getSelection().toString()"}, function(selection) {
-		  var selectedText = selection[0];
-		  var result = "";
+ var selectedText = selection[0];
 		  document.getElementById("output").innerHTML = selectedText;
 		});
-});
+     }
+
+document.addEventListener('DOMContentLoaded',  selectedText());
 
