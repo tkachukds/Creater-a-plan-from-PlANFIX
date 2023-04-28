@@ -27,8 +27,6 @@ snow.addEventListener("click", async () => {
      // executeFunctiononDOM("loadID('txtstandart');");
      // executeFunctiononDOM("loadCLASS('action-description-content-wrapper');");
      // executeFunctiononDOM("writeInCLASS('actions-quick-add-block-text', 'hellooo')");
-
-alert(textplan);
 executeFunctiononDOM("writeinID('txtstandart', '"+textplan+"');");
 });
 
