@@ -6,28 +6,29 @@ chrome.tabs.executeScript(null, {file: 'fromDom.js'});
      //вызываем функцию из fromDom.js для изменения элемента  ДОМе открытой страницы
      chrome.tabs.executeScript(null,  {code:txt});
  }
+/////////////////////////////////////////////////////
+let textplan;
+
+function selectedText() {	
+	chrome.tabs.executeScript( null, {"code": "window.getSelection().toString();"}, 
+     function(selection) {
+          let selectedText = selection;
+          textplan = selection;
+		document.getElementById("output").innerHTML = ''+selectedText;
+		});
+}
+
+document.addEventListener('DOMContentLoaded',  selectedText());
+
  
 /////////////////////////////////////////////////////
 
 snow.addEventListener("click", async () => {
-     // executeFunctiononDOM("loadID();");
-     executeFunctiononDOM("writeinID('txtstandart', 'hellooo')");
+     // executeFunctiononDOM("loadID('txtstandart');");
+     // executeFunctiononDOM("loadCLASS('action-description-content-wrapper');");
+     // executeFunctiononDOM("writeInCLASS('actions-quick-add-block-text', 'hellooo')");
+
+alert(textplan);
+executeFunctiononDOM("writeinID('txtstandart', '"+textplan+"');");
 });
-
-
-
-
-
-
-
-
-
-function selectedText() {	
-	chrome.tabs.executeScript( null, {"code": "window.getSelection().toString()"}, function(selection) {
- var selectedText = selection[0];
-		  document.getElementById("output").innerHTML = selectedText;
-		});
-     }
-
-document.addEventListener('DOMContentLoaded',  selectedText());
 
