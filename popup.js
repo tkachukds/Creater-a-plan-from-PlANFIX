@@ -2,7 +2,7 @@
 chrome.tabs.executeScript(null, {file: 'fromDom.js'});
 
  //вызываем функцию из fromDom.js для изменения элемента  ДОМе открытой страницы
- function executeFunctiononDOM(txt){
+ function FunctiononDOM(txt){
      //вызываем функцию из fromDom.js для изменения элемента  ДОМе открытой страницы
      chrome.tabs.executeScript(null,  {code:txt});
  }
@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded',  selectedText());
 /////////////////////////////////////////////////////
 
 snow.addEventListener("click", async () => {
-     // executeFunctiononDOM("loadID('txtstandart');");
-     // executeFunctiononDOM("loadCLASS('action-description-content-wrapper');");
-     // executeFunctiononDOM("writeInCLASS('actions-quick-add-block-text', 'hellooo')");
-executeFunctiononDOM("writeinID('txtstandart', '"+textplan+"');");
+     // FunctiononDOM("loadID('txtstandart');");
+     // FunctiononDOM("loadCLASS('action-description-content-wrapper');");
+     // FunctiononDOM("writeInCLASS('actions-quick-add-block-text', 'hellooo')");
+FunctiononDOM("writeinID('txtstandart', '"+textplan+"');");
 });
 
